@@ -1,9 +1,10 @@
+import MyModal from '@/components/core/modal';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
 
 const DashBoardPage: FC = () => {
-  
+
   useEffect(() => {
 
   }, []);

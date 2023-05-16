@@ -13,7 +13,7 @@ import { ReactComponent as MoonSvg } from '@/assets/header/moon.svg';
 import { ReactComponent as SunSvg } from '@/assets/header/sun.svg';
 import { ReactComponent as ZhCnSvg } from '@/assets/header/zh_CN.svg';
 import AntdSvg from '@/assets/logo/antd.svg';
-import ReactSvg from '@/assets/logo/react.svg';
+import Logo from '@/assets/logo/biglogo.png';
 import { LocaleFormatter, useLocale } from '@/locales';
 import { setGlobalState } from '@/stores/global.store';
 import { setUserItem } from '@/stores/user.store';
@@ -77,8 +77,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
     <Header className="layout-page-header bg-2" style={{ backgroundColor: token.token.colorBgContainer }}>
       {device !== 'MOBILE' && (
         <div className="logo" style={{ width: collapsed ? 80 : 200 }}>
-          <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} />
-          <img src={AntdSvg} alt="" />
+          <img src={Logo} alt="" style={{ marginRight: collapsed ? '2px' : '20px',width:"40px",height:"40px" }}/>
         </div>
       )}
       <div className="layout-page-header-main">
@@ -86,7 +85,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
           <span id="sidebar-trigger">{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}</span>
         </div>
         <div className="actions">
-          <Tooltip
+          {/* <Tooltip
             title={formatMessage({
               id: theme === 'dark' ? 'gloabal.tips.theme.lightTooltip' : 'gloabal.tips.theme.darkTooltip',
             })}
@@ -96,7 +95,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
                 onClick: onChangeTheme,
               })}
             </span>
-          </Tooltip>
+          </Tooltip> */}
           <HeaderNoticeComponent />
           <Dropdown
             menu={{
